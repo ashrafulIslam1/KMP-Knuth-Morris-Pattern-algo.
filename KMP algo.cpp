@@ -32,7 +32,7 @@ vector<int>tempArray(string pattern)
 
 void kmp(string text, string pattern)
 {
-    bool match = false;
+    //bool match = false;
     vector<int>lps(tempArray(pattern));
     int i=0; // here i = text
     int j=0; // here j = pattern
@@ -57,15 +57,17 @@ void kmp(string text, string pattern)
 
         if(j==pattern.length())
         {
-            cout<<"Pattern Matched"<<endl;
+            /*cout<<"Pattern Matched"<<endl;
             match = true;
-            break;
+            break;*/
+            cout<<"Pattern matched at index: "<< (i- pattern.length())<<" and Pattern is: "<<pattern<<endl;
+            j = lps[j-1];
         }
     }
-    if(!match)
+    /*if(!match)
     {
         cout<<"Pattern not matched"<<endl;
-    }
+    }*/
 }
  int main()
  {
